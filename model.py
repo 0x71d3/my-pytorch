@@ -25,7 +25,7 @@ class TransformerModel(nn.Module):
 
     def forward(self, src, tgt):
         tgt_mask = self.transformer.generate_square_subsequent_mask(
-            tgt.size(-2)
+            tgt.size(-1)
         ).to(device)
 
         src_key_padding_mask = (src == self.padding_idx)

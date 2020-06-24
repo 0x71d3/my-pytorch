@@ -1,0 +1,8 @@
+__pycache__/
+
+/*.codes
+/*.vocab
+
+/*.txt
+
+/*.pt
