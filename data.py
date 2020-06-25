@@ -45,7 +45,7 @@ with open('btsj_seq_tgts.BPE.txt', encoding='utf-8') as f:
     for line in f:
         tgt_seq = [bos_token] + line.split() + [eos_token]
         padded_seq = pad_seq(tgt_seq, pad_token, seq_len_max)
-        tgt_indexes = seq2indexes(tgt_seq)
+        tgt_indexes = seq2indexes(padded_seq)
         tgts.append(tgt_indexes)
 
 with open('nucc_seq_srcs.BPE.txt', encoding='utf-8') as f:
@@ -58,7 +58,7 @@ with open('nucc_seq_tgts.BPE.txt', encoding='utf-8') as f:
     for line in f:
         tgt_seq = [bos_token] + line.split() + [eos_token]
         padded_seq = pad_seq(tgt_seq, pad_token, seq_len_max)
-        tgt_indexes = seq2indexes(tgt_seq)
+        tgt_indexes = seq2indexes(padded_seq)
         tgts.append(tgt_indexes)
 
 
